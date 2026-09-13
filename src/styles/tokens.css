@@ -1,0 +1,54 @@
+/* Design tokens: Twilight Sky palette (Piktochart) */
+:root {
+  /* Primitive */
+  --twilight-night: #0d1b2a;
+  --twilight-dusk: #1b263b;
+  --twilight-slate: #415a77;
+  --twilight-mist: #778da9;
+  --twilight-pearl: #e0e1dd;
+
+  /* Semantic */
+  --color-bg: var(--twilight-night);
+  --color-surface: var(--twilight-dusk);
+  --color-surface-2: #22304a;
+  --color-text: var(--twilight-pearl);
+  --color-text-muted: #9fb0c6; /* mist lifted for 4.5:1 on dusk */
+  --color-accent: var(--twilight-pearl);
+  --color-accent-contrast: var(--twilight-night);
+  --color-border: rgb(119 141 169 / 0.22);
+  --color-border-strong: rgb(119 141 169 / 0.5);
+  --color-success: #8fc9a8;
+  --color-error: #f0a3a3;
+
+  /* Light "daylight" band */
+  --color-light-bg: var(--twilight-pearl);
+  --color-light-text: var(--twilight-night);
+  --color-light-muted: #3a506b;
+
+  /* Type scale (fluid) */
+  --text-xs: clamp(0.72rem, 0.7rem + 0.1vw, 0.78rem);
+  --text-sm: clamp(0.85rem, 0.82rem + 0.15vw, 0.92rem);
+  --text-base: clamp(1rem, 0.96rem + 0.2vw, 1.075rem);
+  --text-lg: clamp(1.15rem, 1.05rem + 0.4vw, 1.3rem);
+  --text-xl: clamp(1.4rem, 1.2rem + 0.8vw, 1.8rem);
+  --text-2xl: clamp(1.9rem, 1.5rem + 1.6vw, 2.8rem);
+  --text-3xl: clamp(2.5rem, 1.8rem + 3vw, 4.4rem);
+  --text-4xl: clamp(3rem, 2rem + 4.6vw, 6.2rem);
+
+  /* Rhythm */
+  --section-y: clamp(5rem, 10vw, 9rem);
+  --gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --sidebar-w: 17rem;
+
+  /* Shape */
+  --radius-sm: 0.375rem;
+  --radius: 0.875rem;
+  --radius-lg: 1.5rem;
+  --radius-arch: 999px 999px var(--radius) var(--radius);
+
+  --shadow-1: 0 1px 2px rgb(0 0 0 / 0.2), 0 8px 24px -12px rgb(0 0 0 / 0.45);
+  --shadow-2: 0 30px 80px -30px rgb(0 0 0 / 0.65);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}

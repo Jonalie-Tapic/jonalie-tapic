@@ -1,69 +1,97 @@
-import Image from "next/image";
+import { SiteShell } from "@/components/layout/site-shell";
+import { CaseStudies } from "@/components/sections/case-studies";
+import { ConversionBlock } from "@/components/sections/conversion-block";
+import { FaqAccordion } from "@/components/sections/faq-accordion";
+import { Hero } from "@/components/sections/hero";
+import { PackageCards } from "@/components/sections/package-cards";
+import { ProcessSteps } from "@/components/sections/process-steps";
+import { ScenarioBlock } from "@/components/sections/scenario-block";
+import { ServiceGrid } from "@/components/sections/service-grid";
+import { TeamBlock } from "@/components/sections/team-block";
+import { TestimonialBlock } from "@/components/sections/testimonial-block";
+import { TrustBar } from "@/components/sections/trust-bar";
+import {
+  about,
+  caseStudies,
+  faqs,
+  hero,
+  packages,
+  photos,
+  pricing,
+  pricingNotes,
+  processSteps,
+  scenarios,
+  services,
+  site,
+  stats,
+  testimonials,
+  tools,
+} from "@/lib/content";
+import { resolvePhoto } from "@/lib/photos";
 
-export default function Home() {
+export default function HomePage() {
+  const book = site.bookingUrl;
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: `${site.name}, Virtual Assistant`,
+    url: site.url,
+    email: site.email,
+    description: hero.subheading,
+    areaServed: ["United States", "Australia", "United Kingdom"],
+    founder: {
+      "@type": "Person",
+      name: site.name,
+      jobTitle: "Virtual Assistant",
+      knowsAbout: ["Inbox management", "Calendar management", "Bookkeeping support", "Travel planning", "Standard operating procedures"],
+    },
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <SiteShell>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+
+      {/* 1 · Relevance */}
+      <Hero
+        eyebrow={hero.eyebrow}
+        headingStart={hero.headingStart}
+        headingEmphasis={hero.headingEmphasis}
+        subheading={hero.subheading}
+        primaryCta={{ label: hero.primaryCta, href: book }}
+        secondaryCta={{ label: hero.secondaryCta, href: "#services" }}
+        assurances={hero.assurances}
+        tasks={hero.tasks}
+        availability={site.availability}
+        media={{ main: resolvePhoto(photos.standing), inset: resolvePhoto(photos.tablet) }}
+      />
+      {/* 2 · Competence at a glance */}
+      <TrustBar tools={tools} stats={stats} />
+      {/* 1–2 · Category fit */}
+      <ServiceGrid services={services} ctaHref={book} />
+      {/* 5 · Personal fit */}
+      <ScenarioBlock scenarios={scenarios} ctaHref={book} />
+      {/* 3 · Competence */}
+      <CaseStudies items={caseStudies} />
+      {/* 4 · Ease of handover (dominant fear) */}
+      <ProcessSteps steps={processSteps} ctaHref={book} />
+      {/* 3 · The real person */}
+      <TeamBlock
+        heading={about.heading}
+        lead={about.lead}
+        body={about.body}
+        principles={about.principles}
+        credentials={about.credentials}
+        media={{ bleed: resolvePhoto(photos.desk), arch: resolvePhoto(photos.pocket) }}
+      />
+      {/* 6 · Value */}
+      <PackageCards packages={packages} pricing={pricing} notes={pricingNotes} ctaHref={book} />
+      {/* 3 · Third-party proof */}
+      <TestimonialBlock items={testimonials} media={resolvePhoto(photos.red)} />
+      {/* 7 · Objections */}
+      <FaqAccordion items={faqs} email={site.email} />
+      {/* 7 · Action */}
+      <ConversionBlock email={site.email} response={site.response} hours={site.hours} media={resolvePhoto(photos.hallway)} />
+    </SiteShell>
   );
 }
