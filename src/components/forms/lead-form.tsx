@@ -188,7 +188,7 @@ export function LeadForm({ email, response }: LeadFormProps) {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="group inline-flex min-h-13 items-center justify-center gap-3 rounded-full bg-pearl px-8 text-sm font-semibold text-night transition-colors duration-500 hover:bg-white disabled:cursor-wait disabled:opacity-70"
+          className="group inline-flex min-h-13 shrink-0 items-center justify-center gap-3 rounded-full bg-pearl px-8 whitespace-nowrap text-sm font-semibold text-night transition-colors duration-500 hover:bg-white disabled:cursor-wait disabled:opacity-70"
         >
           {isSubmitting ? "Sending…" : "Send enquiry"}
           <svg aria-hidden="true" viewBox="0 0 24 24" className="size-4 transition-transform duration-500 group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="1.6">

@@ -41,25 +41,21 @@ export const photos = {
     src: "/images/jonalie-standing.jpg",
     alt: "Jonalie standing in a bright glass-walled office, wearing a navy suit and smiling",
   },
-  tablet: {
-    src: "/images/jonalie-tablet.jpg",
-    alt: "Jonalie in a navy blazer holding a tablet",
+  portrait: {
+    src: "/images/jonalie-portrait.jpg",
+    alt: "Portrait of Jonalie in a navy blazer and glasses, smiling",
   },
   desk: {
     src: "/images/jonalie-desk.jpg",
     alt: "Jonalie seated at her desk in a navy blazer, hands resting on the table",
   },
-  red: {
-    src: "/images/jonalie-red-blazer.jpg",
-    alt: "Jonalie in a burgundy blazer, seated at a desk",
+  atLaptop: {
+    src: "/images/jonalie-laptop.jpg",
+    alt: "Jonalie at her laptop, chin resting on her hand, smiling",
   },
-  pocket: {
-    src: "/images/jonalie-pocket.jpg",
-    alt: "Jonalie standing in an open-plan office, one hand in her pocket",
-  },
-  hallway: {
-    src: "/images/jonalie-hallway.jpg",
-    alt: "Jonalie standing in an office corridor lined with glass walls",
+  overShoulder: {
+    src: "/images/jonalie-over-shoulder.jpg",
+    alt: "Jonalie glancing over her shoulder in an open-plan office",
   },
   // Supporting placeholders (Unsplash)
   flatlay: {
@@ -70,7 +66,7 @@ export const photos = {
     src: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1200&q=75&auto=format&fit=crop",
     alt: "Handwritten to-do list in an open notebook",
   },
-  laptop: {
+  typing: {
     src: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&q=75&auto=format&fit=crop",
     alt: "Hands typing on a laptop",
   },
@@ -218,7 +214,7 @@ export const caseStudies: CaseStudy[] = [
     work: ["Inbox restructured with labels & templates", "Supplier tracker in Notion", "Daily 'needs you' digest"],
     metric: "1,400 → 0",
     metricLabel: "inbox cleared in 11 days",
-    image: photos.laptop,
+    image: photos.typing,
   },
   {
     client: "Boutique consultancy",

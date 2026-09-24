@@ -63,7 +63,7 @@ export default function HomePage() {
         assurances={hero.assurances}
         tasks={hero.tasks}
         availability={site.availability}
-        media={{ main: resolvePhoto(photos.standing), inset: resolvePhoto(photos.tablet) }}
+        media={{ main: resolvePhoto(photos.standing), inset: resolvePhoto(photos.portrait) }}
       />
       {/* 2 · Competence at a glance */}
       <TrustBar tools={tools} stats={stats} />
@@ -82,16 +82,16 @@ export default function HomePage() {
         body={about.body}
         principles={about.principles}
         credentials={about.credentials}
-        media={{ bleed: resolvePhoto(photos.desk), arch: resolvePhoto(photos.pocket) }}
+        media={{ bleed: resolvePhoto(photos.desk), arch: resolvePhoto(photos.overShoulder) }}
       />
       {/* 6 · Value */}
       <PackageCards packages={packages} pricing={pricing} notes={pricingNotes} ctaHref={book} />
       {/* 3 · Third-party proof */}
-      <TestimonialBlock items={testimonials} media={resolvePhoto(photos.red)} />
+      <TestimonialBlock items={testimonials} media={resolvePhoto(photos.atLaptop)} />
       {/* 7 · Objections */}
       <FaqAccordion items={faqs} email={site.email} />
       {/* 7 · Action */}
-      <ConversionBlock email={site.email} response={site.response} hours={site.hours} media={resolvePhoto(photos.hallway)} />
+      <ConversionBlock email={site.email} response={site.response} hours={site.hours} media={resolvePhoto(photos.standing)} />
     </SiteShell>
   );
 }

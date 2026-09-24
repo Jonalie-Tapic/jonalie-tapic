@@ -82,7 +82,7 @@ export function Hero({ id = "top", eyebrow, headingStart, headingEmphasis, subhe
           </div>
 
           {/* Vertical caption along the arch */}
-          <p className="absolute top-[38%] right-[-2.25rem] hidden origin-center rotate-90 text-[10px] tracking-[0.3em] whitespace-nowrap text-muted uppercase xl:block">
+          <p className="absolute top-[18%] left-full ml-5 hidden text-[10px] tracking-[0.3em] whitespace-nowrap text-muted uppercase [writing-mode:vertical-rl] xl:block">
             {availability}
           </p>
 

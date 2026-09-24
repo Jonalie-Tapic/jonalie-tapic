@@ -22,15 +22,16 @@ Everything below is **realistic placeholder copy** written to the blueprint. Non
 
 ## Photography
 
-Drop the original (uncropped) photos into `public/images/` with these names. Until a file exists, the site renders a styled fallback frame.
+Supplied photos live in `public/images/` and are mapped in `photos` in `src/lib/content.ts`. If a mapped file goes missing, the site renders a styled fallback frame instead of a broken image.
 
 | File | Photo | Used in |
 |---|---|---|
-| `jonalie-standing.jpg` | Full-length, navy suit, hands together, glass office | Hero (arch) |
-| `jonalie-tablet.jpg` | Half-length holding a tablet | Hero (tilt card) |
-| `jonalie-desk.jpg` | Seated at desk, navy blazer, plant | About (bleed) |
-| `jonalie-red-blazer.jpg` | Seated, burgundy blazer | Kind words |
-| `jonalie-pocket.jpg` | Full-length, hand in pocket, open office | About (arch) |
-| `jonalie-hallway.jpg` | Full-length, corridor with glass walls | Contact |
+| `jonalie-standing.jpg` (1023×1537) | Full-length, navy suit, glass office | Hero arch, Contact arch |
+| `jonalie-portrait.jpg` (402×619) | Head-and-shoulders, smiling | Hero tilt card |
+| `jonalie-desk.jpg` (900×1024) | Seated at desk, plant | About (full-bleed) |
+| `jonalie-over-shoulder.jpg` (410×616) | Glancing over shoulder | About (small arch) |
+| `jonalie-laptop.jpg` (423×625) | At laptop, chin on hand | Kind words (b&w, colour on hover) |
 
-Supporting workspace imagery (desk, notebook, laptop) currently comes from Unsplash as placeholders.
+Four of the five are only ~400px wide. They look fine in the small frames, but the testimonial photo can look soft on high-DPI screens. Supply higher-resolution originals before launch.
+
+Case-study imagery (notebook, laptop, desk flat-lay) is still Unsplash placeholder.
