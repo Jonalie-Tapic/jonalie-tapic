@@ -26,8 +26,12 @@ export default function ThankYouPage() {
           </h1>
           <p className="fade-up mt-8 text-(length:--text-lg) text-muted" style={{ ["--i" as string]: 2 }}>
             I&rsquo;ll read your note and reply {site.response} with a couple of times for a 20-minute call. If it&rsquo;s urgent, email me at{" "}
-            <a className="text-pearl underline underline-offset-4" href={`mailto:${site.email}`}>
+            <a className="[overflow-wrap:anywhere] text-pearl underline underline-offset-4" href={`mailto:${site.email}`}>
               {site.email}
+            </a>{" "}
+            or call{" "}
+            <a className="whitespace-nowrap text-pearl underline underline-offset-4" href={site.phone.href}>
+              {site.phone.display}
             </a>
             .
           </p>

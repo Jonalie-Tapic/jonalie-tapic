@@ -28,9 +28,13 @@ export function Footer() {
             </ul>
           </nav>
           <div className="space-y-2">
-            <a href={`mailto:${site.email}`} className="block text-pearl hover:underline">
+            <a href={`mailto:${site.email}`} className="block [overflow-wrap:anywhere] text-pearl hover:underline">
               {site.email}
             </a>
+            <a href={site.phone.href} className="block text-pearl hover:underline">
+              {site.phone.display}
+            </a>
+            <p className="text-muted">{site.location.display}</p>
             <a href={site.linkedin} className="block text-muted hover:text-pearl" target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>

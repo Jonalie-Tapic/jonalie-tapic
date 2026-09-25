@@ -6,6 +6,8 @@ import type { ResolvedPhoto } from "@/lib/photos";
 export interface ConversionBlockProps {
   id?: string;
   email: string;
+  phone: { display: string; href: string };
+  location: string;
   response: string;
   hours: string;
   media: ResolvedPhoto;
@@ -17,7 +19,7 @@ const nextSteps = [
   "You get a written plan and price. No pressure, no obligation.",
 ];
 
-export function ConversionBlock({ id = "contact", email, response, hours, media }: ConversionBlockProps) {
+export function ConversionBlock({ id = "contact", email, phone, location, response, hours, media }: ConversionBlockProps) {
   return (
     <section id={id} className="grain relative isolate overflow-hidden section-y">
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-b from-night via-dusk to-night" />
@@ -42,16 +44,43 @@ export function ConversionBlock({ id = "contact", email, response, hours, media 
             ))}
           </ol>
 
-          <div className="mt-12 flex items-end gap-6">
-            <div data-reveal="scale" className="relative hidden aspect-[3/4.4] w-36 shrink-0 overflow-hidden rounded-t-full rounded-b-(--radius) ring-1 ring-line-strong sm:block">
-              <PhotoFrame photo={media} sizes="144px" parallax={0.04} />
+          <div className="mt-12 flex items-start gap-5">
+            <div data-reveal="scale" className="relative hidden aspect-[3/4.4] w-28 shrink-0 overflow-hidden rounded-t-full rounded-b-(--radius) ring-1 ring-line-strong sm:block">
+              <PhotoFrame photo={media} sizes="112px" parallax={0.04} />
             </div>
-            <div className="space-y-4 text-sm">
-              <p className="text-muted">Prefer email?</p>
-              <a href={`mailto:${email}`} className="display block text-(length:--text-xl) text-pearl underline decoration-line-strong underline-offset-8 transition-colors hover:decoration-pearl">
-                {email}
-              </a>
-              <p className="text-muted">Available in {hours}.</p>
+            <div className="min-w-0 flex-1">
+              <p className="text-sm text-muted">Prefer to reach me directly?</p>
+              <dl className="mt-4 space-y-4 text-sm">
+                <div>
+                  <dt className="eyebrow text-muted">Email</dt>
+                  <dd className="mt-1">
+                    <a
+                      href={`mailto:${email}`}
+                      className="text-[0.9rem] font-medium [overflow-wrap:anywhere] text-pearl underline decoration-line-strong underline-offset-4 transition-colors hover:decoration-pearl"
+                    >
+                      {email}
+                    </a>
+                  </dd>
+                </div>
+                <div>
+                  <dt className="eyebrow text-muted">Phone</dt>
+                  <dd className="mt-1">
+                    <a
+                      href={phone.href}
+                      className="text-[0.9rem] font-medium whitespace-nowrap text-pearl underline decoration-line-strong underline-offset-4 transition-colors hover:decoration-pearl"
+                    >
+                      {phone.display}
+                    </a>
+                  </dd>
+                </div>
+                <div>
+                  <dt className="eyebrow text-muted">Based in</dt>
+                  <dd className="mt-1 text-pearl">
+                    {location}
+                    <span className="block text-muted">Available in {hours}.</span>
+                  </dd>
+                </div>
+              </dl>
             </div>
           </div>
         </div>

@@ -9,13 +9,15 @@ export interface SideNavProps {
   role: string;
   availability: string;
   email: string;
+  phone: { display: string; href: string };
+  location: string;
   linkedin: string;
   ctaHref: string;
   /** Anchor links resolve on the homepage only. Elsewhere they prefix "/". */
   onHome?: boolean;
 }
 
-export function SideNav({ items, name, role, availability, email, linkedin, ctaHref, onHome = true }: SideNavProps) {
+export function SideNav({ items, name, role, availability, email, phone, location, linkedin, ctaHref, onHome = true }: SideNavProps) {
   const [active, setActive] = useState<string>("");
   const [open, setOpen] = useState(false);
   const progressRef = useRef<HTMLSpanElement>(null);
@@ -152,13 +154,25 @@ export function SideNav({ items, name, role, availability, email, linkedin, ctaH
               <path d="M4 12h15M13 6l6 6-6 6" />
             </svg>
           </a>
-          <div className="flex gap-5 text-xs text-muted">
-            <a className="hover:text-pearl" href={`mailto:${email}`}>
-              Email
-            </a>
-            <a className="hover:text-pearl" href={linkedin} rel="noopener noreferrer" target="_blank">
-              LinkedIn
-            </a>
+          <div className="space-y-2 text-xs text-muted">
+            <p className="flex items-center gap-2">
+              <svg aria-hidden="true" viewBox="0 0 24 24" className="size-3.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.6">
+                <path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z" />
+                <circle cx="12" cy="9.5" r="2.5" />
+              </svg>
+              {location}
+            </p>
+            <div className="flex gap-5">
+              <a className="hover:text-pearl" href={`mailto:${email}`}>
+                Email
+              </a>
+              <a className="hover:text-pearl" href={phone.href} aria-label={`Call ${phone.display}`}>
+                Call
+              </a>
+              <a className="hover:text-pearl" href={linkedin} rel="noopener noreferrer" target="_blank">
+                LinkedIn
+              </a>
+            </div>
           </div>
         </div>
 
@@ -214,7 +228,18 @@ export function SideNav({ items, name, role, availability, email, linkedin, ctaH
           </div>
           <nav aria-label="Mobile">{links(() => setOpen(false))}</nav>
           <div className="space-y-5">
-            <p className="text-xs text-muted">{availability}</p>
+            <div className="space-y-1.5 text-xs text-muted">
+              <p>{availability}</p>
+              <p>{location}</p>
+            </div>
+            <div className="space-y-1 text-sm">
+              <a href={`mailto:${email}`} className="block min-h-11 content-center [overflow-wrap:anywhere] text-pearl">
+                {email}
+              </a>
+              <a href={phone.href} className="block min-h-11 content-center text-pearl">
+                {phone.display}
+              </a>
+            </div>
             <a href={ctaHref} onClick={() => setOpen(false)} className="flex min-h-12 items-center justify-center rounded-full bg-pearl text-sm font-semibold text-night">
               Book a discovery call
             </a>

@@ -38,6 +38,12 @@ export default function HomePage() {
     name: `${site.name}, Virtual Assistant`,
     url: site.url,
     email: site.email,
+    telephone: site.phone.href.replace("tel:", ""),
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: site.location.city,
+      addressCountry: site.location.countryCode,
+    },
     description: hero.subheading,
     areaServed: ["United States", "Australia", "United Kingdom"],
     founder: {
@@ -91,7 +97,7 @@ export default function HomePage() {
       {/* 7 · Objections */}
       <FaqAccordion items={faqs} email={site.email} />
       {/* 7 · Action */}
-      <ConversionBlock email={site.email} response={site.response} hours={site.hours} media={resolvePhoto(photos.standing)} />
+      <ConversionBlock email={site.email} phone={site.phone} location={site.location.display} response={site.response} hours={site.hours} media={resolvePhoto(photos.standing)} />
     </SiteShell>
   );
 }

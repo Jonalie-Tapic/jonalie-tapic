@@ -9,7 +9,7 @@ Everything below is **realistic placeholder copy** written to the blueprint. Non
 | Item | Where | Current placeholder |
 |---|---|---|
 | Surname / business name | `site.name` | "Jonalie" only |
-| Email, LinkedIn, booking link | `site.*` | `hello@example.com`, `#` links |
+| LinkedIn, booking link | `site.*` | `#` links (email, phone and location are confirmed, see below) |
 | Years of experience, clients, retention | `stats` | 5+ yrs, 30+ clients, 4 yrs longest client |
 | Time zones & hours covered | `site.hours`, FAQ | US, AU & UK business hours |
 | Response-time promise | Hero, Contact | Within 1 business day |
@@ -19,6 +19,14 @@ Everything below is **realistic placeholder copy** written to the blueprint. Non
 | Testimonials: names, roles, quotes | `testimonials` | **Fictional. Replace with real, permissioned quotes** |
 | Rates | `pricing`, `packages` | No published prices. Tiers show "To be discussed", with notes on what shapes a quote. Confirm tier names and inclusions |
 | Certifications / training | `about.credentials` | Generic examples |
+
+## Confirmed by Jonalie
+
+| Item | Value |
+|---|---|
+| Email | jonalietapicworkemail@gmail.com |
+| Phone | +63 962 899 3813 |
+| Location | Manila, Philippines (GMT+8) |
 
 ## Photography
 

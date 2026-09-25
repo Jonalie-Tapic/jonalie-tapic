@@ -18,7 +18,18 @@ export const site = {
   role: "Virtual Assistant",
   tagline: "General admin & operations support",
   url: "https://jonalie.example.com",
-  email: "hello@example.com",
+  email: "jonalietapicworkemail@gmail.com",
+  phone: {
+    display: "+63 962 899 3813",
+    href: "tel:+639628993813",
+  },
+  location: {
+    city: "Manila",
+    country: "Philippines",
+    countryCode: "PH",
+    display: "Manila, Philippines",
+    timezone: "GMT+8",
+  },
   bookingUrl: "#contact",
   linkedin: "#",
   hours: "US, AU & UK business hours",
@@ -73,7 +84,7 @@ export const photos = {
 } satisfies Record<string, Photo>;
 
 export const hero = {
-  eyebrow: "Virtual Assistant · General Admin & Operations",
+  eyebrow: "Virtual Assistant · General Admin · Manila, Philippines",
   headingStart: "Your inbox, calendar & admin,",
   headingEmphasis: "quietly handled.",
   subheading:
@@ -255,7 +266,7 @@ export const about = {
   lead: "I'm the calm, organised person behind a lot of very busy people.",
   body: [
     "Before going independent I spent years in office administration, the kind of role where you're the one who knows where everything is, who remembers the client's name, and who notices the contract hasn't come back.",
-    "Now I do the same work remotely for a small number of clients. Keeping the list short is deliberate. It means I know your business well enough to act before you have to ask.",
+    "Now I do the same work remotely from Manila for a small number of clients. Keeping the list short is deliberate. It means I know your business well enough to act before you have to ask.",
   ],
   principles: [
     { title: "Discreet", body: "Your inbox and your clients' details go no further than me. NDA as standard." },
@@ -343,7 +354,7 @@ export const testimonials: Testimonial[] = [
 export const faqs = [
   {
     q: "What time zone do you work in?",
-    a: "I cover US, AU and UK business hours by arrangement. We agree fixed overlap hours when we start, so you always know when I'm online and how soon you'll hear back.",
+    a: "I'm based in Manila, Philippines (GMT+8), and cover US, AU and UK business hours by arrangement. We agree fixed overlap hours when we start, so you always know when I'm online and how soon you'll hear back.",
   },
   {
     q: "How do you keep my accounts and data secure?",
